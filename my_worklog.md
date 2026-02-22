@@ -1,5 +1,11 @@
 ## 2026/02/22                                                                                                                                                                            
 
+### Personal ws
+
+The docker flow in 21 now works after upgrading the Ubuntu from 18 to 20.04.
+
+### Corp ws
+
 Tried the same as 21 on corp ws. It has error
 
 ```
