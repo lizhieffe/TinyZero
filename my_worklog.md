@@ -1,3 +1,13 @@
+## 2026/02/22                                                                                                                                                                            
+
+Tried the same as 21 on corp ws. It has error
+
+```
+docker create --runtime=nvidia --gpus all --net=host --shm-size="10g" --cap-add=SYS_ADMIN -v .:/workspace/verl --name verl verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2 sleep
+Error response from daemon: unknown or invalid runtime name: nvidia
+```
+Will skip this option.
+ 
 ## 2026/02/21
 
 Use verl docker image to setup the env. [Instruction](https://verl.readthedocs.io/en/latest/start/install.html#install-from-docker-image)
