@@ -4,6 +4,14 @@
 
 The docker flow in 21 now works after upgrading the Ubuntu from 18 to 20.04.
 
+However, a new error happened that the Nvidia 1080Ti graphic card doesn't support bf16.
+
+```
+ValueError: Bfloat16 is only supported on GPUs with compute capability of at least 8.0. Your NVIDIA GeForce GTX 1080 Ti GPU has compute capability 6.1. You can use float16 instead by explicitly setting the`dtype` flag in CLI, for example: --dtype=half.
+```
+
+Conclusion: use Nvidia 3090 and newer cards.
+
 ### Corp ws
 
 Tried the same as 21 on corp ws. It has error
