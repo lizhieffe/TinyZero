@@ -56,7 +56,6 @@ python ./examples/data_preprocess/countdown.py --local_dir data/countdown
 
 ### Start training
 
-bash
-```
+```bash
 ./train_0.5b_ppo.sh
 ```
