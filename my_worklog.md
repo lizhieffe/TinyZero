@@ -1,5 +1,11 @@
 ## 2026/02/22                                                                                                                                                                            
 
+### RunPod
+
+The job can start on RunPod with A5000.
+
+However it errors with "torch.OutOfMemoryError: CUDA out of memory.". The A5000 uses 24GB VRAM.
+
 ### Personal ws
 
 The docker flow in 21 now works after upgrading the Ubuntu from 18 to 20.04.
