@@ -22,15 +22,16 @@
    If you run on managed service like RunPod
 
       a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
+
       b. Set the custom docker start cmd: `sleep infinity`
 
    Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
-2. Follow the installation steps
+3. Follow the installation steps
 
    https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
 
-3. Download model
+4. Download model
 
 Here the `Qwen 0.5B` model is used.
 
