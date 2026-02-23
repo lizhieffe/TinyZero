@@ -11,6 +11,9 @@ source ~/.bashrc
 
 ### verl docker
 
+> [!IMPORTANT]
+> Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
+
 #### If you are running on workstation:
 
 ```bash
@@ -24,9 +27,6 @@ docker exec -it verl bash
 a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
 
 b. Set the custom docker start cmd: `sleep infinity`
-
-> [!IMPORTANT]
-> Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
 ### Follow the installation steps
 
