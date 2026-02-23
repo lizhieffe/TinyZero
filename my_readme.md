@@ -23,7 +23,6 @@ docker exec -it verl bash
 
 > [!NOTE]
 > If the conda is used the first time on this machines, run
-
 > ```bash
 > conda init bash
 > source ~/.bashrc
