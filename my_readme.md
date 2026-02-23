@@ -1,5 +1,14 @@
 ## Steps to run training
 
+0. Env setup
+
+If the conda is used the first time on this machines, run
+
+```
+conda init bash
+source ~/.bashrc
+```
+
 1. verl docker
 
 ```
@@ -28,7 +37,12 @@ huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 
 4. Prepare training data
 
-Here we use teh Countdown task: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
+```
+conda activate zero
+python ./examples/data_preprocess/countdown.py --local_dir data/countdown
+```
+
+Note, this is based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
 5. Start training
 
