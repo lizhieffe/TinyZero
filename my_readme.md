@@ -94,7 +94,7 @@ pip install -U "huggingface_hub[cli]>=0.24.0,<1.0"
 
 # Train
 
-### Prepare training data
+## Prepare training data
 
 ```bash
 python ./examples/data_preprocess/countdown.py --local_dir data/countdown
@@ -103,7 +103,7 @@ python ./examples/data_preprocess/countdown.py --local_dir data/countdown
 > [!NOTE]
 > Based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
-### Download model
+## Download model
 
 Here the `Qwen 0.5B` model is used.
 
@@ -113,6 +113,9 @@ huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 ```
 
 ## Start training
+
+> [!NOTE]
+> If it asks for WANDB key, find it at https://colab.research.google.com/?authuser=1
 
 ```bash
 ./train_0.5b_ppo.sh
