@@ -2,9 +2,11 @@
 
 ### RunPod
 
-The job can start on RunPod with A5000.
+The job can start on RunPod with A5000 for 0.5B model `./train_0.5b_ppo.sh`.
 
 However it errors with "torch.OutOfMemoryError: CUDA out of memory.". The A5000 uses 24GB VRAM.
+
+Conclusion: 24GB VRAM is not enough for 0.5B PPO.
 
 ### Personal ws
 
