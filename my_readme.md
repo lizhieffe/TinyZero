@@ -3,11 +3,9 @@
 > [!IMPORTANT]
 > Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
-## **[Recommended]** Use Docker 
+## *[Recommended]* Use Docker 
 
-## No Docker
-
-### verl docker
+### Enable verl docker
 
 #### If you are running on workstation:
 
@@ -22,6 +20,49 @@ docker exec -it verl bash
 - Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
 
 - Set the custom docker start cmd: `sleep infinity`
+
+### Download source
+
+```bash
+git clone https://github.com/lizhieffe/TinyZero.git
+cd TinyZero
+```
+
+### Follow the installation steps
+
+```bash
+# verl
+pip install -e .
+
+# quality of life
+pip install wandb IPython matplotlib
+```
+
+> [!NOTE]
+> Based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
+
+### Prepare training data
+
+```bash
+python ./examples/data_preprocess/countdown.py --local_dir data/countdown
+```
+
+> [!NOTE]
+> Based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
+
+### Download model
+
+Here the `Qwen 0.5B` model is used.
+
+```bash
+# Install the HF cli
+pip install -U "huggingface_hub[cli]>=0.24.0,<1.0"
+
+# Download model to local dir
+huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
+```
+
+## No Docker
 
 ### Download source
 
@@ -86,7 +127,7 @@ pip install -U "huggingface_hub[cli]>=0.24.0,<1.0"
 huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 ```
 
-### Start training
+# Run training
 
 ```bash
 ./train_0.5b_ppo.sh
