@@ -25,8 +25,8 @@
 
       b. Set the custom docker start cmd: `sleep infinity`
 
-   > [!NOTE]
-   Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
+   > [!IMPORTANT]
+   > Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
 3. Follow the installation steps
 
@@ -51,7 +51,8 @@ conda activate zero
 python ./examples/data_preprocess/countdown.py --local_dir data/countdown
 ```
 
-Note, this is based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
+> [!NOTE]
+> This is based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
 5. Start training
 
