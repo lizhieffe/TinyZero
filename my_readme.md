@@ -1,9 +1,13 @@
-## Steps to run training
-
-### verl docker
+# Steps to run training
 
 > [!IMPORTANT]
 > Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
+
+## **[Recommended]** Use Docker 
+
+## No Docker
+
+### verl docker
 
 #### If you are running on workstation:
 
