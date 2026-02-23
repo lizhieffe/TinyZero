@@ -1,13 +1,6 @@
 ## Steps to run training
 
-### Env setup
 
-If the conda is used the first time on this machines, run
-
-```bash
-conda init bash
-source ~/.bashrc
-```
 
 ### verl docker
 
@@ -27,6 +20,14 @@ docker exec -it verl bash
 - Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
 
 - Set the custom docker start cmd: `sleep infinity`
+
+> [!NOTE]
+> If the conda is used the first time on this machines, run
+
+> ```bash
+> conda init bash
+> source ~/.bashrc
+> ```
 
 ### Follow the installation steps
 
