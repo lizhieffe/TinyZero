@@ -25,8 +25,8 @@
 
       b. Set the custom docker start cmd: `sleep infinity`
 
-   > [!IMPORTANT]
-   > Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
+> [!IMPORTANT]
+> Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
 3. Follow the installation steps
 
