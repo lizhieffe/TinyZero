@@ -1,38 +1,37 @@
 ## Steps to run training
 
-0. Env setup
+### Env setup
 
-   If the conda is used the first time on this machines, run
+If the conda is used the first time on this machines, run
 
-   ```bash
-   conda init bash
-   source ~/.bashrc
-   ```
+```bash
+conda init bash
+source ~/.bashrc
+```
 
-1. verl docker
+### verl docker
 
-   If you are running on workstation:
+If you are running on workstation:
 
-   ```bash
-   docker create --runtime=nvidia --gpus all --net=host --shm-size="10g" --cap-add=SYS_ADMIN -v .:/workspace/verl --name verl verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2 sleep infinity
-   docker start verl
-   docker exec -it verl bash
-   ```
+```bash
+docker create --runtime=nvidia --gpus all --net=host --shm-size="10g" --cap-add=SYS_ADMIN -v .:/workspace/verl --name verl verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2 sleep infinity
+docker start verl
+docker exec -it verl bash
+```
 
-   If you run on managed service like RunPod
+If you run on managed service like RunPod
 
-      a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
-
-      b. Set the custom docker start cmd: `sleep infinity`
+a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
+b. Set the custom docker start cmd: `sleep infinity`
 
 > [!IMPORTANT]
 > Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
-3. Follow the installation steps
+### Follow the installation steps
 
-   https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
+https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
 
-4. Download model
+### Download model
 
 Here the `Qwen 0.5B` model is used.
 
@@ -44,7 +43,7 @@ pip install -U "huggingface_hub[cli]>=0.24.0,<1.0"
 huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 ```
 
-4. Prepare training data
+### Prepare training data
 
 ```bash
 conda activate zero
@@ -54,8 +53,9 @@ python ./examples/data_preprocess/countdown.py --local_dir data/countdown
 > [!NOTE]
 > This is based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
-5. Start training
+### Start training
 
+bash
 ```
-bash train_0.5b_ppo.sh
+./train_0.5b_ppo.sh
 ```
