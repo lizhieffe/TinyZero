@@ -11,21 +11,20 @@ source ~/.bashrc
 
 1. verl docker
 
-If you are running on workstation:
+    If you are running on workstation:
 
-```
-docker create --runtime=nvidia --gpus all --net=host --shm-size="10g" --cap-add=SYS_ADMIN -v .:/workspace/verl --name verl verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2 sleep infinity
-docker start verl
-docker exec -it verl bash
-```
+    ```
+    docker create --runtime=nvidia --gpus all --net=host --shm-size="10g" --cap-add=SYS_ADMIN -v .:/workspace/verl --name verl verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2 sleep infinity
+    docker start verl
+    docker exec -it verl bash
+    ```
 
-If you run on managed service like RunPod
+    If you run on managed service like RunPod
 
-    a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
+        a. Load the same verl docker image `verlai/verl:vemlp-th2.4.0-cu124-vllm0.6.3-ray2.10-v0.0.2`
+        b. Set the custom docker start cmd: `sleep infinity`
 
-    b. Set the custom docker start cmd: `sleep infinity`
-
-Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
+    Note: this requires CUDA 12.4 and above, which requires Ubuntu 20 and above.
 
 2. Follow the installation steps
 
