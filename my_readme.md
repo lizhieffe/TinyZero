@@ -42,7 +42,33 @@ conda activate zero
 
 ### Follow the installation steps
 
-https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
+```bash
+# install torch [or you can skip this step and let vllm to install the correct version for you]
+pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+# install vllm
+pip3 install vllm==0.6.3 # or you can install 0.5.4, 0.4.2 and 0.3.1
+pip3 install ray
+
+# verl
+pip install -e .
+
+# flash attention 2
+pip3 install flash-attn --no-build-isolation
+# quality of life
+pip install wandb IPython matplotlib
+```
+
+> [!NOTE]
+> Based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#installation
+
+### Prepare training data
+
+```bash
+python ./examples/data_preprocess/countdown.py --local_dir data/countdown
+```
+
+> [!NOTE]
+> Based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
 ### Download model
 
@@ -55,15 +81,6 @@ pip install -U "huggingface_hub[cli]>=0.24.0,<1.0"
 # Download model to local dir
 huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 ```
-
-### Prepare training data
-
-```bash
-python ./examples/data_preprocess/countdown.py --local_dir data/countdown
-```
-
-> [!NOTE]
-> This is based on: https://github.com/lizhieffe/TinyZero/tree/main?tab=readme-ov-file#countdown-task
 
 ### Start training
 
