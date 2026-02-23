@@ -1,12 +1,5 @@
 ## Steps to run training
 
-### Download source
-
-```bash
-git clone https://github.com/lizhieffe/TinyZero.git
-cd TinyZero
-```
-
 ### verl docker
 
 > [!IMPORTANT]
@@ -26,12 +19,26 @@ docker exec -it verl bash
 
 - Set the custom docker start cmd: `sleep infinity`
 
+### Download source
+
+```bash
+git clone https://github.com/lizhieffe/TinyZero.git
+cd TinyZero
+```
+
+### Enter Conda
+
 > [!NOTE]
 > If the conda is used the first time on this machines, run
 > ```bash
 > conda init bash
 > source ~/.bashrc
 > ```
+
+```bash
+conda create -n zero python=3.9
+conda activate zero
+```
 
 ### Follow the installation steps
 
@@ -52,7 +59,6 @@ huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 ### Prepare training data
 
 ```bash
-conda activate zero
 python ./examples/data_preprocess/countdown.py --local_dir data/countdown
 ```
 
