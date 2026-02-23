@@ -1,6 +1,11 @@
 ## Steps to run training
 
+### Download source
 
+```bash
+git clone https://github.com/lizhieffe/TinyZero.git
+cd TinyZero
+```
 
 ### verl docker
 
