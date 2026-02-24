@@ -35,4 +35,5 @@ trainer:
   total_epochs: 4
   logger: ['console']
   seed: 1
+  hf_repo_id: null
 

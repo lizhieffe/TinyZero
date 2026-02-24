@@ -25,5 +25,6 @@ python3 -m verl.trainer.main_ppo \
     trainer.save_freq=10 \
     trainer.test_freq=10 \
     trainer.project_name=TinyZero \
+    trainer.hf_repo_id=lizhieffe/tiny_zero \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=15 2>&1 | tee verl_demo.log

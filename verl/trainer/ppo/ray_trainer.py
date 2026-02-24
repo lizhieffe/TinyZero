@@ -518,7 +518,8 @@ class RayPPOTrainer(object):
                                         f'global_step_{self.global_steps}')
         actor_remote_path = None if self.config.trainer.default_hdfs_dir is None else os.path.join(
             self.config.trainer.default_hdfs_dir, 'actor')
-        self.actor_rollout_wg.save_checkpoint(actor_local_path, actor_remote_path)
+        hf_repo_id = self.config.trainer.get('hf_repo_id', None)
+        self.actor_rollout_wg.save_checkpoint(actor_local_path, actor_remote_path, hf_repo_id=hf_repo_id)
 
         if self.use_critic:
             critic_local_path = os.path.join(self.config.trainer.default_local_dir, 'critic',

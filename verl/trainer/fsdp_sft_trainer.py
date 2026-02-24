@@ -308,6 +308,11 @@ class FSDPSFTTrainer(object):
             if self.config.trainer.default_hdfs_dir:
                 hdfs_io.makedirs(self.config.trainer.default_hdfs_dir, exist_ok=True)
                 hdfs_io.copy(src=path, dst=self.config.trainer.default_hdfs_dir, dirs_exist_ok=True)
+            hf_repo_id = self.config.trainer.get('hf_repo_id', None)
+            if hf_repo_id is not None:
+                print(f'Pushing model checkpoint to Hugging Face: {hf_repo_id}')
+                self.model.push_to_hub(hf_repo_id)
+                self.tokenizer.push_to_hub(hf_repo_id)
         torch.distributed.barrier()
 
     def fit(self):
