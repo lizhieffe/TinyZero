@@ -118,5 +118,6 @@ huggingface-cli download Qwen/Qwen2.5-0.5B --local-dir model/Qwen2.5-0.5B
 > If it asks for WANDB key, find it at https://colab.research.google.com/?authuser=1
 
 ```bash
+export HF_TOKEN=YOUR_HUGGING_FACE_TOKEN
 ./train_0.5b_ppo.sh
 ```
